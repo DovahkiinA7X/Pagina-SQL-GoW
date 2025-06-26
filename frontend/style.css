@@ -1,0 +1,164 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #f0f0f0;
+  background-image: url("https://wallpapers.com/images/hd/god-of-war-3-wallpaper-fum7k2vqxfj8v2lc.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+/* ——————————————————————————————
+   2) Buscador personalizado
+   —————————————————————————————— */
+#buscador {
+  height: 50px;
+  background-color: #e2e2e2;
+  color: #000;
+  border: 2px solid #f1840f;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  padding: 0 16px;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+#btnBuscar {
+  height: 50px;
+  background-color: #f2c06b;
+  color: #000;
+  border: 2px solid #f1840f;
+  border-radius: 0 8px 8px 0;
+  padding: 0 24px;
+  transition: background 0.2s;
+}
+
+#btnBuscar:hover {
+  background-color: #e07a0d;
+}
+
+/* ——————————————————————————————
+   3) Contenedor de tarjetas (flex con gap)
+   —————————————————————————————— */
+#listaJefes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  /* separación entre tarjetas */
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* ——————————————————————————————
+   4) Columnas fluidas (sin anchura fija)
+   —————————————————————————————— */
+#listaJefes .col-md-3 {
+  flex: 0 0 auto;
+  /* que sigan su ancho CSS */
+  max-width: none;
+  margin: 0;
+  /* el gap ya lo gestiona todo */
+}
+
+@media (max-width: 767px) {
+  #listaJefes .col-md-3 {
+    flex: 0 0 calc(50% - 24px);
+    max-width: calc(50% - 24px);
+  }
+}
+
+/* ——————————————————————————————
+   5) Tarjetas personalizadas
+   —————————————————————————————— */
+.card {
+  background-color: #333333;
+  /* gris muy oscuro */
+  color: #ffffff;
+  border: 2px solid #ff5900;
+  /* borde naranja */
+  width: 320px;
+  /* ancho fijo */
+  min-height: 450px;
+  /* altura mínima */
+  border-radius: 32px;
+  box-shadow: 0 16px 32px rgb(0, 0, 0);
+  transition: transform 0.4s, box-shadow 0.4s;
+  overflow: hidden;
+  /* evita solapamientos internos */
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9);
+}
+
+/* ——————————————————————————————
+   6) Imagen interna
+   —————————————————————————————— */
+.jefe-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  display: block;
+}
+
+.ajustar-cronos {
+  object-position: 60% 5%;
+  /* mover imagen hacia la izquierda y arriba */
+}
+
+.ajustar-hephaestus {
+  object-position: 60% 2%;
+  /* mover imagen hacia la izquierda y arriba */
+}
+
+.ajustar-medusa {
+  object-position: 60% 2%;
+  /* mover imagen hacia la izquierda y arriba */
+}
+
+.ajustar-desertsyren {
+  object-position: 60% 2%;
+  /* mover imagen hacia la izquierda y arriba */
+}
+
+.ajustar-barbarian {
+  object-position: 60% 30%;
+  /* mover imagen hacia la izquierda y arriba */
+}
+
+.ajustar-euryale {
+  object-position: 10% 30%;
+  /* mover imagen hacia la izquierda y arriba */
+}
+
+/* ——————————————————————————————
+   7) Texto dentro de la tarjeta
+   —————————————————————————————— */
+.card-title {
+  color: #f1c40f;
+  font-size: 1.5rem;
+  margin-bottom: .75rem;
+}
+
+.card-body p {
+  color: #c7c7c7;
+  font-size: .95rem;
+  margin: .25rem 0;
+}
